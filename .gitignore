@@ -1,34 +1,19 @@
-# Python
 .venv/
 venv/
 __pycache__/
 *.py[cod]
-
-# PyCharm
 .idea/
-
-# PyInstaller
 build/
 dist/
 *.spec
-
-# Tests
 .pytest_cache/
 .coverage
 htmlcov/
-
-# Testdaten
 Testdaten/
-
-# Temporäre Dateien
 *.tmp
 *.log
-
-# Windows
 Thumbs.db
 Desktop.ini
-
-# Zugangsdaten
 .env
 .env.*
 !.env.example
