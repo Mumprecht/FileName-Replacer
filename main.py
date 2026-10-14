@@ -11,7 +11,7 @@ from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 
 APP_TITLE = 'FileName-Replacer'
-APP_VERSION = '0.2.0'
+APP_VERSION = '0.2.1'
 COPYRIGHT = '© 2026 Urs Mumprecht'
 REPOSITORY_URL = 'https://github.com/Mumprecht/FileName-Replacer'
 
@@ -191,6 +191,9 @@ class Application(tk.Tk):
 
     def _build(self) -> None:
         menubar = tk.Menu(self)
+        file_menu = tk.Menu(menubar, tearoff=False)
+        file_menu.add_command(label='Beenden', command=self.destroy)
+        menubar.add_cascade(label='Datei', menu=file_menu)
         help_menu = tk.Menu(menubar, tearoff=False)
         help_menu.add_command(label='Über FileName-Replacer', command=self.show_about)
         help_menu.add_command(label='MIT-Lizenz anzeigen', command=self.show_license)
@@ -225,6 +228,7 @@ class Application(tk.Tk):
             ('Letzte Aktion rückgängig', self.undo_last),
             ('Testordner erstellen', self.create_test),
             ('Testordner löschen', self.delete_test),
+            ('Beenden', self.destroy),
         ):
             ttk.Button(actions, text=label, command=action).pack(side='left', padx=(0, 7), pady=3)
 
